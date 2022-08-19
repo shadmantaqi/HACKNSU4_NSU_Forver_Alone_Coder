@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -372,7 +373,7 @@
     <div class="section">
         <center>
             <div class="container">
-                <a href="booking.php" class="btn">Add New Schedule</button>
+                <a href="booking.php" class="btn">Add New Schedule</a>
             </div>
 
         </center>
@@ -380,46 +381,41 @@
         <h1>
             <h1>Your Ride Schedule :)</h1>
         </h1>
+       <?php
+       include 'connection.php';
+       $sql = "SELECT * FROM `booking_bydate` where userID=$_SESSION[userid]";
+$result = $conn->query($sql);
 
-        <table>
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo ' <table>
 
-            <tr>
-                <td>
-                    <center>Jatrabari to Uttara</center>
-                </td>
-            </tr>
+    <tr>
+        <td>
+            <center>'.$row["pickLocation"].' to '.$row["dropLocation"].'</center>
+        </td>
+    </tr>
 
-            <tr>
-                <td>
-                    <center>Pick time: 7:00 AM</center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                    <center><button class="button" style="vertical-align:middle"><span>Delete</span></button></center>
-                </td>
-            </tr>
-        </table>
+    <tr>
+        <td>
+            <center>'.$row["pickTime"].' '.$row["pickDate"].'</center>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br>
+            <center><a href="delete.php?id='.$row["id"].'"class="button" style="vertical-align:middle"><span>Delete</span></a></center>
+        </td>
+    </tr>
+</table>
+';
+  }
+} else {
+  echo "0 results";
+}?>
+       
 
-        <table>
-            <tr>
-                <td>
-                    <center>Jatrabari to Uttara</center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <center>Pick time: 7:00 AM</center>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <br>
-                    <center><button class="button" style="vertical-align:middle"><span>Delete</span></button></center>
-                </td>
-            </tr>
-        </table>
 
     </div>
 </body>

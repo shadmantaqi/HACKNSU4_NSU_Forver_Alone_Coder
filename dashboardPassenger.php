@@ -289,55 +289,35 @@ li a:hover:not(.active) {
     </script>
 
     <div class="section">
+    <button>Add New Schedule</button>
         <h1>
-            Ride Request For You
+           Your Ride Schedule
         </h1>
 
         <table>
-            <tr>
-                <td>4 People</td>
+            <tr>             
                 <td>Jatrabari to Uttara</td>
             </tr>
-            <tr>
-                <td>18 Aug</td>
+            <tr>  
                 <td>Pick time: 7:00 AM</td>
             </tr>
             <tr>
-                <td></td>
-                <td><button> BID</button></td>
+                <td><button>Delete</button></td>
             </tr>
         </table>
 
         <table>
-
-            <tr>
-                <td>7 People</td>
-                <td>Jatrabari to Motijheel</td>
+            <tr>             
+                <td>Jatrabari to Uttara</td>
             </tr>
-            <tr>
-                <td>18 Aug</td>
+            <tr>  
                 <td>Pick time: 7:00 AM</td>
             </tr>
             <tr>
-                <td></td>
-                <td><button> BID</button></td>
+                <td><button>Delete</button></td>
             </tr>
         </table>
-        <table>
-
-            <tr>
-                <td>5 People</td>
-                <td>Jatrabari to NSU</td>
-            </tr>
-            <tr>
-                <td>19 Aug</td>
-                <td>Pick time: 7:00 AM</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><button> BID</button></td>
-            </tr>
-        </table>
+        
     </div>
 </body>
 

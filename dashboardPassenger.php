@@ -20,7 +20,7 @@
 
         nav {
             width: 100%;
-                }
+        }
 
 
         header img {
@@ -184,43 +184,122 @@
         }
     </style>
     <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #4bcffa;
-}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #4bcffa;
+        }
 
-li {
-  float: left;
-}
+        li {
+            float: left;
+        }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-li a:hover:not(.active) {
-  background-color: #111;
-}
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
 
-.active {
-  background-color: #04AA6D;
-}
-</style>
+        .active {
+            background-color: #04AA6D;
+        }
+
+
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .container img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container .btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: burlywood;
+            color: black;
+            font-size: 16px;
+            padding: 16px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .container .btn:hover {
+            background-color: black;
+            color: palegreen;
+        }
+
+
+        .button {
+            display: inline-block;
+            border-radius: 4px;
+            background-color: #f4511e;
+            border: none;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+            width: 200px;
+            transition: all 0.5s;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .button span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: 0.5s;
+        }
+
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+        .button:hover span {
+            padding-right: 25px;
+        }
+
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+        h1 {
+            text-shadow: 2px 2px 5px red;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav>
-        <ul>
-  <li><a href="#home">Home</a></li>
-  <li style="float:right"><a class="active" href="driver.php"><i class="fa fa-user-circle-o"></i></a></li>
-</ul>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li style="float:right"><a class="active" href="driver.php"><i class="fa fa-user-circle-o"></i></a></li>
+            </ul>
         </nav>
 
     </header>
@@ -287,38 +366,61 @@ li a:hover:not(.active) {
             dots[slideIndex - 1].className += " active";
         }
     </script>
+    <br>
+    <br>
 
     <div class="section">
-    <button>Add New Schedule</button>
+        <center>
+            <div class="container">
+                <button class="btn">Add New Schedule</button>
+            </div>
+
+        </center>
+        <br>
         <h1>
-           Your Ride Schedule
+            <h1>Your Ride Schedule :)</h1>
         </h1>
 
         <table>
-            <tr>             
-                <td>Jatrabari to Uttara</td>
+
+            <tr>
+                <td>
+                    <center>Jatrabari to Uttara</center>
+                </td>
             </tr>
-            <tr>  
-                <td>Pick time: 7:00 AM</td>
+
+            <tr>
+                <td>
+                    <center>Pick time: 7:00 AM</center>
+                </td>
             </tr>
             <tr>
-                <td><button>Delete</button></td>
+                <td>
+                    <br>
+                    <center><button class="button" style="vertical-align:middle"><span>Delete</span></button></center>
+                </td>
             </tr>
         </table>
 
         <table>
-            <tr>             
-                <td>Jatrabari to Uttara</td>
-            </tr>
-            <tr>  
-                <td>Pick time: 7:00 AM</td>
+            <tr>
+                <td>
+                    <center>Jatrabari to Uttara</center>
+                </td>
             </tr>
             <tr>
-                <td><button>Delete</button></td>
+                <td>
+                    <center>Pick time: 7:00 AM</center>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <br>
+                    <center><button class="button" style="vertical-align:middle"><span>Delete</span></button></center>
+                </td>
             </tr>
         </table>
-        
+
     </div>
 </body>
-
 </html>

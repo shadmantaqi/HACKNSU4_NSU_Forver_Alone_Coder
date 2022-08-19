@@ -7,92 +7,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
 
-    
+
+
     <style>
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            -webkit-animation-name: fadeIn;
+            /* Fade in the background */
+            -webkit-animation-duration: 0.4s;
+            animation-name: fadeIn;
+            animation-duration: 0.4s
+        }
 
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
-}
+        /* Modal Content */
+        .modal-content {
+            position: fixed;
+            bottom: 0;
+            background-color: #fefefe;
+            width: 100%;
+            -webkit-animation-name: slideIn;
+            -webkit-animation-duration: 0.4s;
+            animation-name: slideIn;
+            animation-duration: 0.4s
+        }
 
-/* Modal Content */
-.modal-content {
-  position: fixed;
-  bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-  animation-duration: 0.4s
-}
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-/* The Close Button */
-.close {
-  color: white;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
 
-.modal-header {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
+        .modal-body {
+            padding: 2px 16px;
+        }
 
-.modal-body {padding: 2px 16px;}
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #5cb85c;
+            color: white;
+        }
 
-.modal-footer {
-  padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
-}
+        /* Add Animation */
+        @-webkit-keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
 
-/* Add Animation */
-@-webkit-keyframes slideIn {
-  from {bottom: -300px; opacity: 0} 
-  to {bottom: 0; opacity: 1}
-}
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
 
-@keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
-}
+        @keyframes slideIn {
+            from {
+                bottom: -300px;
+                opacity: 0
+            }
 
-@-webkit-keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
+            to {
+                bottom: 0;
+                opacity: 1
+            }
+        }
 
-@keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-</style>
-   <style>
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+    </style>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -105,7 +139,7 @@
 
         nav {
             width: 100%;
-                }
+        }
 
 
         header img {
@@ -269,43 +303,78 @@
         }
     </style>
     <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #4bcffa;
-}
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #4bcffa;
+        }
 
-li {
-  float: left;
-}
+        li {
+            float: left;
+        }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
 
-li a:hover:not(.active) {
-  background-color: #111;
-}
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
 
-.active {
-  background-color: #04AA6D;
-}
-</style>
+        .active {
+            background-color: #04AA6D;
+        }
+
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #555;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            background-color: lightblue;
+        }
+    </style>
+    <style>
+        .button {
+            background-color: #f4511e;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            text-align: center;
+            font-size: 16px;
+            margin: 4px 2px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            opacity: 1
+        }
+    </style>
+
 </head>
 
 <body>
     <header>
         <nav>
-        <ul>
-  <li><a href="#home">Home</a></li>
-  <li style="float:right"><a class="active" href="driver.php"><i class="fa fa-user-circle-o"></i></a></li>
-</ul>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li style="float:right"><a class="active" href="driver.php"><i class="fa fa-user-circle-o"></i></a></li>
+            </ul>
         </nav>
 
     </header>
@@ -313,22 +382,19 @@ li a:hover:not(.active) {
 
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187706/Blog_Post_01.jpg"
-                style="width:100%">
+            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187706/Blog_Post_01.jpg" style="width:100%">
             <div class="text">Hey! Need a Ride?</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187712/Blog_Post_02.jpg"
-                style="width:100%">
+            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187712/Blog_Post_02.jpg" style="width:100%">
             <div class="text">Enjoy the Ride!</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187717/Blog_Post_03.jpg"
-                style="width:100%">
+            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187717/Blog_Post_03.jpg" style="width:100%">
             <div class="text">Let's Go :)</div>
         </div>
 
@@ -360,15 +426,20 @@ li a:hover:not(.active) {
             </tr>
             <tr>
                 <td></td>
-                <td><form action="" method="POST"><input type="text" name="bidamount"><input type="hidden" name="reqID"><input type="submit" value="Bid"></form></td>
+                <td>
+                    <form action="" method="POST">
+                        <input type="text" name="bidamount">
+                        <input type="hidden" name="reqID">
+                        <center> <button class="button">BID</button> </center>
+                    </form>
+                </td>
             </tr>
         </table>
-        
-        <table>
 
+        <table>
             <tr>
-                <td>7 People</td>
-                <td>Jatrabari to Motijheel</td>
+                <td>4 People</td>
+                <td>Jatrabari to Uttara</td>
             </tr>
             <tr>
                 <td>18 Aug</td>
@@ -376,51 +447,46 @@ li a:hover:not(.active) {
             </tr>
             <tr>
                 <td></td>
-                <td><button> BID</button></td>
+                <td>
+                    <form action="" method="POST">
+                        <input type="text" name="bidamount">
+                        <input type="hidden" name="reqID">
+                        <center> <button class="button">BID</button> </center>
+                    </form>
+                </td>
             </tr>
         </table>
         <table>
-
             <tr>
-                <td>5 People</td>
-                <td>Jatrabari to NSU</td>
+                <td>4 People</td>
+                <td>Jatrabari to Uttara</td>
             </tr>
             <tr>
-                <td>19 Aug</td>
+                <td>18 Aug</td>
                 <td>Pick time: 7:00 AM</td>
             </tr>
             <tr>
                 <td></td>
-                <td><button> BID</button></td>
+                <td>
+                    <form action="" method="POST">
+                        <input type="text" name="bidamount">
+                        <input type="hidden" name="reqID">
+                        <center> <button class="button">BID</button> </center>
+                    </form>
+                </td>
             </tr>
         </table>
     </div>
 
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">&times;</span>
-      <h2>BID</h2>
-    </div>
-    <div class="modal-body">
- <label >Bidding Amount<br>
-  <input type="text"  name="fname" value=""><br>
-     </div>
-    <div class="modal-footer">
-    <label>Bidding ID</label>
-      <input type="text" id="bidID" name="bidID">
-      <input type="submit" value="BID">
-    </div>
-  </div>
-
-</div>
     <script>
         let slideIndex = 1;
         showSlides(slideIndex);
+
         function addBid() {
             console.log("Hellow");
         }
+
         function plusSlides(n) {
             showSlides(slideIndex += n);
         }
@@ -433,8 +499,12 @@ li a:hover:not(.active) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -446,7 +516,7 @@ li a:hover:not(.active) {
         }
     </script>
 
-   
+
 </body>
 
 </html>

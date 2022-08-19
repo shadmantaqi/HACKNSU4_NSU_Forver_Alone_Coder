@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body {
         font-family: Arial, Helvetica, sans-serif;
@@ -77,14 +78,18 @@
 
 <body>
 
-    <form action="/action_page.php" style="border:1px solid #ccc">
+    <form action="otp.php" method="POST" style="border:1px solid #ccc">
         <div class="container">
             <h1>Registration</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
-
+            <label for="psw-repeat"><b>Create Account As</b></label><br>
+            <input type="radio" id="html" name="account_as" value="passenger">
+<label for="html">Passenger</label>
+<input type="radio" id="css" name="account_as" value="driver">
+<label for="css">Driver</label><br>
             <label for="psw-repeat"><b>Phone</b></label>
-            <input type="text" maxlength="11" placeholder="Enter Your Mobile No.">
+            <input type="text" maxlength="11" name="phone" placeholder="Enter Your Mobile No.">
 
             <label for="psw"><b>Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw" required>

@@ -10,7 +10,6 @@ input[type=text], input[type=int], select {
   border-radius: 4px;
   box-sizing: border-box;
 }
-
 input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
@@ -21,11 +20,9 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
-
 input[type=submit]:hover {
   background-color: #45a049;
 }
-
 div {
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -42,17 +39,17 @@ div {
   <input type="int" id="noplate" name="noplate" value="" placeholder="Car No. plate" pattern=""><br><br>
   <label for="model">Model:</label><br>
   <input type="text" id="model" name="model" value="" placeholder="Model" pattern=""<br><br>
+  <label for="Seat No:">Seat No::</label><br>
+  <input type="text" id="Seat No:" name="Seat No:" value="" placeholder="Seat No:" pattern=""<br><br>
   <p>Type:</p>
 <form action="/action_page.php">
-  <input type="radio" id="html" name="type" value="AC">
-  <label for="type">AC</label><br>
-  <input type="radio" id="Non AC" name="type" value="Non AC">
-  <label for="type">Non AC</label><br>
+  <input type="radio" id="html" name="type" value="AC">
+  <label for="type">AC</label><br>
+  <input type="radio" id="Non AC" name="type" value="Non AC">
+  <label for="type">Non AC</label><br>
   
    <input type="submit" value="Submit">
 </form>
 </div>
-
 </body>
 </html>
-

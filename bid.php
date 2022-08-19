@@ -219,7 +219,7 @@ li a:hover:not(.active) {
         <nav>
         <ul>
   <li><a href="#home">Home</a></li>
-  <li style="float:right"><a class="active" href="#about"><i class="fa fa-user-circle-o"></i></a></li>
+  <li style="float:right"><a class="active" href="driver.php"><i class="fa fa-user-circle-o"></i></a></li>
 </ul>
         </nav>
 

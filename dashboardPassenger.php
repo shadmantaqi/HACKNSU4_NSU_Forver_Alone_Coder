@@ -372,7 +372,7 @@
     <div class="section">
         <center>
             <div class="container">
-                <button class="btn">Add New Schedule</button>
+                <a href="booking.php" class="btn">Add New Schedule</button>
             </div>
 
         </center>

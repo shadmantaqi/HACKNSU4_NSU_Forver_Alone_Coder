@@ -88,7 +88,7 @@ if (isset($_POST["pickDate"])) {
     $sql = "INSERT INTO `booking_bydate`(" . implode(",", $insertQ1) . ") VALUES(" . implode(",", $insertQ2) . ")";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+        header("location: index.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

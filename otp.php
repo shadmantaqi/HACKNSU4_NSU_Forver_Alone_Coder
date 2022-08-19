@@ -135,7 +135,6 @@ if ($result->num_rows > 0) {
     </form>
 </body>
 
-=======
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -143,9 +142,5 @@ if ($result->num_rows > 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OTP</title>
 </head>
-<body>
-    <h1>Need to Authenticate</h1>
 
-</body>
->>>>>>> a38ae7fb455c2af527fc666cf6d28d6f94bb67ca
 </html>

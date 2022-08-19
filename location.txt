@@ -1,31 +1,31 @@
 <option value="Narayanganj">Narayanganj</option>
-<option value="Shonir Akrah"
-<option value="Jatrabari"
-"Saydabad"
-"Mothijheel"
-"Palton"
-"Malibagh"
-"Moghbazar"
-"Mohakhali"
-"Kakoli"
-"Ecb Chattor"
-"Purobi"
-"Mirpur-12"
-"Mirpur-2"
-"Mirpur-1"
-"Diabari"
-"Maniknagor"
-"Bashabo"
-"Notun Bazar"
-"Kuril Bishwroad"
-"Khilkhet"
-"Airport"
-"Abdullahpur"
-"Bashabo"
-"Boikal Hotel"
-"Mirpur-11"
-"Mirpur-10"
-"Nilkhet"
-"Ajimpur"
-"Polashi"
-"Katabon"
+<option value="Shonir Akrah">Shonir Akrah</option>
+<option value="Jatrabari">Jatrabari</option>
+<option value="Saydabad">Saydabad</option>
+<option value="Mothijheel">Mothijheel</option>
+<option value="Palton">Palton</option>
+<option value="Malibagh">Malibagh</option>
+<option value="Moghbazar">Moghbazar</option>
+<option value="Mohakhali">Mohakhali</option>
+<option value="Kakoli">Kakoli</option>
+<option value="Ecb Chattor">Ecb Chattor</option>
+<option value="Purobi">Purobi</option>
+<option value="Mirpur-12">Mirpur-12</option>
+<option value="Mirpur-2">Mirpur-2</option>
+<option value="Mirpur-1">Mirpur-1</option>
+<option value="Diabari">Diabari</option>
+<option value="Maniknagor">Maniknagor</option>
+<option value="Bashabo">Bashabo</option>
+<option value="Notun Bazar">Notun Bazar</option>
+<option value="Kuril Bishwroad">Kuril Bishwroad</option>
+<option value="Khilkhet">Khilkhet</option>
+<option value="Airport">Airport</option>
+<option value="Abdullahpur">Abdullahpur</option>
+<option value="Bashabo">Bashabo</option>
+<option value="Boikal Hotel">Shonir Akrah</option>
+<option value="Mirpur-11">Mirpur-11</option>
+<option value="Mirpur-10">Mirpur-10</option>
+<option value="Nilkhet">Nilkhet</option>
+<option value="Ajimpur">Ajimpur</option>
+<option value="Polashi">Polashi</option>
+<option value="Katabon">Katabon</option>

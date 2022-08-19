@@ -1,9 +1,11 @@
-<?php include 'protection.php'?>
+<?php include 'protection.php' ?>
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    input[type=text],input[type=date],input[type=time],
+    input[type=text],
+    input[type=date],
+    input[type=time],
     select {
         width: 100%;
         padding: 12px 20px;
@@ -74,22 +76,25 @@
 <?php
 
 include('connection.php');
-                 $insertQ1=array();
-                 $insertQ2=array();
-                 $updateQ1=array();
-                 foreach($_POST as $key => $value) {
-                     array_push($insertQ1,"`$key`");
-                     array_push($insertQ2,"'$value'");
-                     array_push($updateQ1,"`$key`='$value'");
-                  };
-  if(isset($_POST["pickDate"]))  {              $sql = "INSERT INTO `booking_bydate`(".implode(",",$insertQ1).") VALUES(".implode(",",$insertQ2).")";
-                  
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-  }}
+$insertQ1 = array();
+$insertQ2 = array();
+$updateQ1 = array();
+foreach ($_POST as $key => $value) {
+    array_push($insertQ1, "`$key`");
+    array_push($insertQ2, "'$value'");
+    array_push($updateQ1, "`$key`='$value'");
+};
+if (isset($_POST["pickDate"])) {
+    $sql = "INSERT INTO `booking_bydate`(" . implode(",", $insertQ1) . ") VALUES(" . implode(",", $insertQ2) . ")";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
 ?>
+
 <body>
     <h1>Date</h1>
     <div>
@@ -97,47 +102,96 @@ if ($conn->query($sql) === TRUE) {
             <label for="fname">Pick Date</label>
             <input type="date" name="pickDate">
 
-    <br>
-    <label for="fname">Pick Time</label>
+            <br>
+            <label for="fname">Pick Time</label>
             <input type="time" name="pickTime">
 
-    <br>
-    <label for="type">Max Budget</label>
-    <input type="text" value="" name="maxBudget">
-    <input type="hidden" name="userID" value="<?php echo $_SESSION["userid"]?>">
+            <br>
+            <label for="type">Max Budget</label>
+            <input type="text" value="" name="maxBudget">
+            <input type="hidden" name="userID" value="<?php echo $_SESSION["userid"] ?>">
 
-    <label for="type">Car Type</label>
-    <select id="type" name="ac">
-        <option value="select">Select</option>
-        <option value="ac">AC</option>
-        <option value="non">NON AC</option>
-    </select>
-    <br>
-    <label for="country">Pick Location</label>
-    <select id="country" name="pickLocation">
-        <option value="select">Select</option>
-        <option value="nonac">Bashundhara</option>
-        <option value="nonac">Old Dhaka</option>
-        <option value="nonac">Dhanmondi</option>
-        <option value="nonac">Banani</option>
-        <option value="nonac">Gabtoli</option>
-        <option value="nonac">Gulshan</option>
-        <option value="nonac">Badda</option>
-    </select>
-    <label for="country">Drop Off Lacation</label>
-    <select id="country" name="dropLocation">
-        <option value="select">Select</option>
-        <option value="nonac">Bashundhara</option>
-        <option value="nonac">Old Dhaka</option>
-        <option value="nonac">Dhanmondi</option>
-        <option value="nonac">Banani</option>
-        <option value="nonac">Gabtoli</option>
-        <option value="nonac">Gulshan</option>
-        <option value="nonac">Badda</option>
-    </select>
-    <br>
-        <input type="submit" value="Create Request">
+            <label for="type">Car Type</label>
+            <select id="type" name="ac">
+                <option value="select">Select</option>
+                <option value="ac">AC</option>
+                <option value="non">NON AC</option>
+            </select>
+            <br>
+            <label for="country">Pick Location</label>
+            <select id="country" name="pickLocation">
+                <option value="select">Select</option>
+                <option value="Narayanganj">Narayanganj</option>
+                <option value="Shonir Akrah">Shonir Akrah</option>
+                <option value="Jatrabari">Jatrabari</option>
+                <option value="Saydabad">Saydabad</option>
+                <option value="Mothijheel">Mothijheel</option>
+                <option value="Palton">Palton</option>
+                <option value="Malibagh">Malibagh</option>
+                <option value="Moghbazar">Moghbazar</option>
+                <option value="Mohakhali">Mohakhali</option>
+                <option value="Kakoli">Kakoli</option>
+                <option value="Ecb Chattor">Ecb Chattor</option>
+                <option value="Purobi">Purobi</option>
+                <option value="Mirpur-12">Mirpur-12</option>
+                <option value="Mirpur-2">Mirpur-2</option>
+                <option value="Mirpur-1">Mirpur-1</option>
+                <option value="Diabari">Diabari</option>
+                <option value="Maniknagor">Maniknagor</option>
+                <option value="Bashabo">Bashabo</option>
+                <option value="Notun Bazar">Notun Bazar</option>
+                <option value="Kuril Bishwroad">Kuril Bishwroad</option>
+                <option value="Khilkhet">Khilkhet</option>
+                <option value="Airport">Airport</option>
+                <option value="Abdullahpur">Abdullahpur</option>
+                <option value="Bashabo">Bashabo</option>
+                <option value="Boikal Hotel">Shonir Akrah</option>
+                <option value="Mirpur-11">Mirpur-11</option>
+                <option value="Mirpur-10">Mirpur-10</option>
+                <option value="Nilkhet">Nilkhet</option>
+                <option value="Ajimpur">Ajimpur</option>
+                <option value="Polashi">Polashi</option>
+                <option value="Katabon">Katabon</option>
+            </select>
+            <label for="country">Drop Off Lacation</label>
+            <select id="country" name="dropLocation">
+                <option value="select">Select</option>
+                <option value="Narayanganj">Narayanganj</option>
+                <option value="Shonir Akrah">Shonir Akrah</option>
+                <option value="Jatrabari">Jatrabari</option>
+                <option value="Saydabad">Saydabad</option>
+                <option value="Mothijheel">Mothijheel</option>
+                <option value="Palton">Palton</option>
+                <option value="Malibagh">Malibagh</option>
+                <option value="Moghbazar">Moghbazar</option>
+                <option value="Mohakhali">Mohakhali</option>
+                <option value="Kakoli">Kakoli</option>
+                <option value="Ecb Chattor">Ecb Chattor</option>
+                <option value="Purobi">Purobi</option>
+                <option value="Mirpur-12">Mirpur-12</option>
+                <option value="Mirpur-2">Mirpur-2</option>
+                <option value="Mirpur-1">Mirpur-1</option>
+                <option value="Diabari">Diabari</option>
+                <option value="Maniknagor">Maniknagor</option>
+                <option value="Bashabo">Bashabo</option>
+                <option value="Notun Bazar">Notun Bazar</option>
+                <option value="Kuril Bishwroad">Kuril Bishwroad</option>
+                <option value="Khilkhet">Khilkhet</option>
+                <option value="Airport">Airport</option>
+                <option value="Abdullahpur">Abdullahpur</option>
+                <option value="Bashabo">Bashabo</option>
+                <option value="Boikal Hotel">Shonir Akrah</option>
+                <option value="Mirpur-11">Mirpur-11</option>
+                <option value="Mirpur-10">Mirpur-10</option>
+                <option value="Nilkhet">Nilkhet</option>
+                <option value="Ajimpur">Ajimpur</option>
+                <option value="Polashi">Polashi</option>
+                <option value="Katabon">Katabon</option>
+            </select>
+            <br>
+            <input type="submit" value="Create Request">
         </form>
     </div>
 </body>
+
 </html>

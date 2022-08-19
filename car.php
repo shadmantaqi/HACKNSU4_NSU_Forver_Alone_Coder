@@ -42,6 +42,8 @@ div {
   <input type="int" id="noplate" name="noplate" value="" placeholder="Car No. plate" pattern=""><br><br>
   <label for="model">Model:</label><br>
   <input type="text" id="model" name="model" value="" placeholder="Model" pattern=""<br><br>
+  <label for="Seat No:">Seat No::</label><br>
+  <input type="text" id="Seat No:" name="Seat No:" value="" placeholder="Seat No:" pattern=""<br><br>
   <p>Type:</p>
 <form action="/action_page.php">
   <input type="radio" id="html" name="type" value="AC">

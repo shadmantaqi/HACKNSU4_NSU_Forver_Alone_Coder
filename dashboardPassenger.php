@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -308,22 +307,19 @@
 
         <div class="mySlides fade">
             <div class="numbertext">1 / 3</div>
-            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187706/Blog_Post_01.jpg"
-                style="width:100%">
+            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187706/Blog_Post_01.jpg" style="width:100%">
             <div class="text">Hey! Need a Ride?</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">2 / 3</div>
-            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187712/Blog_Post_02.jpg"
-                style="width:100%">
+            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187712/Blog_Post_02.jpg" style="width:100%">
             <div class="text">Enjoy the Ride!</div>
         </div>
 
         <div class="mySlides fade">
             <div class="numbertext">3 / 3</div>
-            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187717/Blog_Post_03.jpg"
-                style="width:100%">
+            <img src="https://onde-website-bucket.s3.ap-south-1.amazonaws.com/site/content/blog/v1591187717/Blog_Post_03.jpg" style="width:100%">
             <div class="text">Let's Go :)</div>
         </div>
 
@@ -355,8 +351,12 @@
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -381,42 +381,63 @@
         <h1>
             <h1>Your Ride Schedule :)</h1>
         </h1>
-       <?php
-       include 'connection.php';
-       $sql = "SELECT * FROM `booking_bydate` where userID=$_SESSION[userid]";
-$result = $conn->query($sql);
+        <?php
+        include 'connection.php';
+        $sql = "SELECT * FROM `booking_bydate` where userID=$_SESSION[userid]";
+        $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo ' <table>
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while ($row = $result->fetch_assoc()) {
+                echo ' <table>
 
     <tr>
         <td>
-            <center>'.$row["pickLocation"].' to '.$row["dropLocation"].'</center>
+            <center>' . $row["pickLocation"] . ' to ' . $row["dropLocation"] . '</center>
         </td>
     </tr>
 
     <tr>
         <td>
-            <center>'.$row["pickTime"].' '.$row["pickDate"].'</center>
+            <center>' . $row["pickTime"] . ' ' . $row["pickDate"] . '</center>
         </td>
     </tr>
     <tr>
         <td>
             <br>
-            <center><a href="delete.php?id='.$row["id"].'"class="button" style="vertical-align:middle"><span>Delete</span></a></center>
+            <center><a href="delete.php?id=' . $row["id"] . '"class="button" style="vertical-align:middle"><span>Delete</span></a></center>
         </td>
     </tr>
 </table>
 ';
-  }
-} else {
-  echo "0 results";
-}?>
-       
+            }
+        } else {
+            echo ' <table>
+
+    <tr>
+        <td>
+          <center> NO Schedule  </center>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+          
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <br>
+            
+        </td>
+    </tr>
+</table>
+';
+        } ?>
+
 
 
     </div>
 </body>
+
 </html>
